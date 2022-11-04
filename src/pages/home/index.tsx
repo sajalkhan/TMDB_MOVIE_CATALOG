@@ -1,4 +1,5 @@
 import { useGetGenres } from 'api/useGetGenres';
+import { useGetRandomMovies } from 'api/useGetRandomMovies';
 import React from 'react';
 
 type Genres = {
@@ -8,6 +9,9 @@ type Genres = {
 
 const Home: React.FC = () => {
   const { data } = useGetGenres();
+  const { data: randomMovies } = useGetRandomMovies('action', 'action');
+
+  // console.log('get -- ', randomMovies);
 
   return (
     <div className="p-home">

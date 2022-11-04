@@ -7,13 +7,11 @@ const fetchMovieData = () => {
   return axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`);
 };
 
-export const useGetGenres = (onSuccess?: (data: any) => void, onError?: (err: any) => void) => {
+export const useGetGenres = () => {
   return useQuery('genre', fetchMovieData, {
     staleTime: 5000,
     refetchOnMount: false,
     refetchOnWindowFocus: false,
-    onSuccess,
-    onError,
     select: data => data?.data?.genres,
   });
 };
