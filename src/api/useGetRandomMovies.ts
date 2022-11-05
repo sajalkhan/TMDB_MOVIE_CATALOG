@@ -19,6 +19,7 @@ export const useGetRandomMovies = (params: string, searchKey: string) => {
         return {
           id: item.id,
           imgUrl: item.poster_path,
+          movieName: item.title,
         };
       });
     },
