@@ -9,7 +9,7 @@ export interface cardProps {
   className?: string;
   imgUrl: string;
   movieName: string;
-  id: string | number;
+  id?: string | number;
 }
 
 export const Card: React.FC<cardProps> = ({

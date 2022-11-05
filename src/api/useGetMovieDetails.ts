@@ -17,11 +17,10 @@ export const UseGetMovieDetails = (movieId: string | number) => {
         id: data?.data.id,
         title: data?.data.title,
         overview: data?.data.overview,
-        imdbid: data?.data.imdb_id,
+        imDbId: data?.data.imdb_id,
         popularity: data?.data.popularity,
         releaseDate: data?.data.release_date,
         imgUrl: data?.data.poster_path,
-        movieName: data?.data.title,
       };
     },
   });
