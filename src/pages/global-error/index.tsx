@@ -1,4 +1,3 @@
-import { Button } from 'components/atoms/button';
 import { ErrorMessage } from 'components/atoms/error-message';
 import { Section } from 'components/molecules/section';
 import { errorResParser } from 'libs/utils';
@@ -14,9 +13,7 @@ const GlobalError: React.FC<GlobalErrorProps> = ({ error, onReset }) => {
 
   return (
     <Section className="p-global-error__section" padding="none" size="large-mobile">
-      <Button onClick={onReset} modifiers="transparent-black">
-        X
-      </Button>
+      <button onClick={onReset}>X</button>
       <ErrorMessage error={errorRes} />
     </Section>
   );
