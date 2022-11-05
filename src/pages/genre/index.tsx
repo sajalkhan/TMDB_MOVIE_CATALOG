@@ -5,11 +5,13 @@ import { useParams } from 'react-router-dom';
 
 const Genre: React.FC = () => {
   const { id } = useParams();
-  const { data, isSuccess, isLoading } = UseGetTopMovies(id ?? '');
+  const { data, isLoading } = UseGetTopMovies(id ?? '');
 
   return (
     <div className="p-genre">
-      <div className="p-genre__content">{isSuccess && <CardList movies={data} isLoading={isLoading} />}</div>
+      <div className="p-genre__content">
+        <CardList movies={data || []} isLoading={isLoading} />
+      </div>
     </div>
   );
 };
