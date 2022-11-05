@@ -5,21 +5,15 @@ export interface cardProps {
   modifiers?: ModifierProp<'large' | 'medium' | 'small'>;
   className?: string;
   imgUrl: string;
-  id: string;
+  id: string | number;
   onClick?: () => void;
 }
 
-export const Card: React.FC<cardProps> = ({
-  modifiers = 'medium',
-  className: additionalClassName = '',
-  imgUrl,
-  id,
-  onClick,
-}) => {
+export const Card: React.FC<cardProps> = ({ modifiers, className: additionalClassName = '', imgUrl, id, onClick }) => {
   const componentClassName = mapModifiers('a-card', modifiers);
   const className = `${componentClassName} ${additionalClassName}`.trim();
 
-  const imgBaseUrl = 'https://image.tmdb.org/t/p/w342/';
+  const imgBaseUrl = 'https://image.tmdb.org/t/p/w342';
 
   return (
     <div className={className} key={id} onClick={onClick}>
