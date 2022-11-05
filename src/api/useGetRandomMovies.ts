@@ -9,7 +9,7 @@ const fetchMovieInfo = (searchKey: string | number) => {
   );
 };
 
-const getRandom5Items = (arr: any, num: number) => {
+const getRandomFiveMovies = (arr: any, num: number) => {
   const shuffled = [...arr].sort(() => 0.5 - Math.random());
 
   return shuffled.slice(0, num);
@@ -21,7 +21,7 @@ export const useGetRandomMovies = (params: string, searchKey: string | number) =
     refetchOnMount: false,
     refetchOnWindowFocus: false,
     select: data => {
-      const movies = getRandom5Items(data?.data.results, 5);
+      const movies = getRandomFiveMovies(data?.data.results, 5);
 
       return movies.map((item: any) => {
         return {
