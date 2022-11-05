@@ -1,5 +1,5 @@
 import { useGetGenres } from 'api/useGetGenres';
-import { useGetRandomMovies } from 'api/useGetRandomMovies';
+import { Movies } from 'components/organisms/movies';
 import React from 'react';
 
 type Genres = {
@@ -9,19 +9,12 @@ type Genres = {
 
 const Home: React.FC = () => {
   const { data } = useGetGenres();
-  const { data: randomMovies } = useGetRandomMovies('action', 'action');
-
-  console.log('get -- ', randomMovies);
 
   return (
     <div className="p-home">
       <div className="p-home__content">
-        {data?.map((item: Genres, indx: number) => {
-          return (
-            <ul key={indx}>
-              <li>{item.name}</li>
-            </ul>
-          );
+        {data?.map((item: Genres) => {
+          return <Movies key={item.id} title={item.name} movieId={item.id} />;
         })}
       </div>
     </div>

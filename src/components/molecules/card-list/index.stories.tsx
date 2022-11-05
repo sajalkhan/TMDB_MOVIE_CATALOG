@@ -19,7 +19,6 @@ const Template: ComponentStory<typeof CardList> = args => <CardList {...args} />
 
 export const Normal = Template.bind({});
 Normal.args = {
-  title: 'Action',
   movies: [
     {
       id: 110,

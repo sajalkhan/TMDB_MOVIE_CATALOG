@@ -8,13 +8,13 @@
 
   &__text {
     width: 100%;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     line-height: 39px;
     color: $color-base-darkmagenta;
 
     @include sp {
-      font-size: 22px;
+      font-size: 28px;
       line-height: 33px;
     }
 

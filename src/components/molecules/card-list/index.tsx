@@ -4,8 +4,7 @@ import { Loading } from 'components/atoms/loading';
 import React from 'react';
 
 interface cardListProps {
-  title: string;
-  size: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large';
   movies: cardProps[];
   isLoading?: boolean;
   error?: {
@@ -13,10 +12,9 @@ interface cardListProps {
   };
 }
 
-export const CardList: React.FC<cardListProps> = ({ movies, title, size = 'medium', isLoading, error }) => {
+export const CardList: React.FC<cardListProps> = ({ movies, size = 'medium', isLoading, error }) => {
   return (
     <div className="m-card-list">
-      <Heading>{title}</Heading>
       {isLoading ? (
         <Loading />
       ) : error ? (
@@ -24,11 +22,7 @@ export const CardList: React.FC<cardListProps> = ({ movies, title, size = 'mediu
       ) : (
         <div className="m-card-list__items">
           {movies.map((item: cardProps) => {
-            return (
-              <a href="#" key={item.id}>
-                <Card id={item.id} movieName={item.movieName} imgUrl={item.imgUrl} modifiers={size} />
-              </a>
-            );
+            return <Card key={item.id} id={item.id} movieName={item.movieName} imgUrl={item.imgUrl} modifiers={size} />;
           })}
         </div>
       )}

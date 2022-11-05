@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
-const fetchMovieInfo = (searchKey: string) => {
+const fetchMovieInfo = (searchKey: string | number) => {
   const API_KEY = 'cd890f94a756b1518a2a17617a5b430e';
   const BASE_URL = 'api.themoviedb.org/3';
   return axios.get(
@@ -9,13 +9,21 @@ const fetchMovieInfo = (searchKey: string) => {
   );
 };
 
-export const useGetRandomMovies = (params: string, searchKey: string) => {
+const getRandom5Items = (arr: any, num: number) => {
+  const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+  return shuffled.slice(0, num);
+};
+
+export const useGetRandomMovies = (params: string, searchKey: string | number) => {
   return useQuery([params], () => fetchMovieInfo(searchKey), {
     staleTime: 5000,
     refetchOnMount: false,
     refetchOnWindowFocus: false,
     select: data => {
-      return data?.data.results.map((item: any) => {
+      const movies = getRandom5Items(data?.data.results, 5);
+
+      return movies.map((item: any) => {
         return {
           id: item.id,
           imgUrl: item.poster_path,
