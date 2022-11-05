@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const { data } = useGetGenres();
   const { data: randomMovies } = useGetRandomMovies('action', 'action');
 
-  // console.log('get -- ', randomMovies);
+  console.log('get -- ', randomMovies);
 
   return (
     <div className="p-home">
