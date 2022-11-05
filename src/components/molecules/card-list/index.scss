@@ -1,0 +1,31 @@
+.m-card-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 2rem;
+  padding-left: 2rem;
+
+  .a-heading {
+    margin-top: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-white;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    padding-top: 1.7rem;
+    padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-right: 0.75rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  @include sp {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}

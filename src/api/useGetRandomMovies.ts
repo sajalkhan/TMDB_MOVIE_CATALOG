@@ -14,6 +14,13 @@ export const useGetRandomMovies = (params: string, searchKey: string) => {
     staleTime: 5000,
     refetchOnMount: false,
     refetchOnWindowFocus: false,
-    select: data => data?.data,
+    select: data => {
+      return data?.data.results.map((item: any) => {
+        return {
+          id: item.id,
+          imgUrl: item.poster_path,
+        };
+      });
+    },
   });
 };
