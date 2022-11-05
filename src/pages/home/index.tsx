@@ -1,4 +1,4 @@
-import { useGetGenres } from 'api/useGetGenres';
+import { UseGetGenres } from 'api/useGetGenres';
 import { Movies } from 'components/organisms/movies';
 import React from 'react';
 
@@ -8,7 +8,7 @@ type Genres = {
 };
 
 const Home: React.FC = () => {
-  const { data } = useGetGenres();
+  const { data } = UseGetGenres();
 
   return (
     <div className="p-home">

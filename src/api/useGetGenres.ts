@@ -6,7 +6,7 @@ const fetchMovieData = () => {
   return axios.get(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`);
 };
 
-export const useGetGenres = () => {
+export const UseGetGenres = () => {
   return useQuery('genre', fetchMovieData, {
     staleTime: 5000,
     refetchOnMount: false,

@@ -12,7 +12,7 @@ const getRandomFiveMovies = (arr: any, num: number) => {
   return shuffled.slice(0, num);
 };
 
-export const useGetRandomMovies = (params: string, searchKey: string | number) => {
+export const UseGetRandomMovies = (params: string, searchKey: string | number) => {
   return useQuery([params], () => fetchMovieInfo(searchKey), {
     staleTime: 5000,
     refetchOnMount: false,

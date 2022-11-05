@@ -1,4 +1,4 @@
-import { useGetRandomMovies } from 'api/useGetRandomMovies';
+import { UseGetRandomMovies } from 'api/useGetRandomMovies';
 import { Heading } from 'components/atoms/heading';
 import { CardList } from 'components/molecules/card-list';
 import { mapModifiers } from 'libs/component';
@@ -11,7 +11,7 @@ export type MovieProps = {
 };
 
 export const Movies: React.FC<MovieProps> = ({ title, movieId }) => {
-  const { data, isLoading } = useGetRandomMovies(title, movieId);
+  const { data, isLoading } = UseGetRandomMovies(title, movieId);
 
   const componentClassName = mapModifiers('o-movies');
   const className = `${componentClassName}`.trim();
