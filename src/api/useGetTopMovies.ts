@@ -9,6 +9,8 @@ const fetchMovieInfo = (searchKey: string | number) => {
   );
 };
 
+const getTopTenMovies = (arr: any, num: number) => [...arr].slice(0, num);
+
 export const UseGetTopMovies = (searchKey: string | number) => {
   return useQuery(['genres', searchKey], () => fetchMovieInfo(searchKey), {
     enabled: true,
@@ -16,7 +18,9 @@ export const UseGetTopMovies = (searchKey: string | number) => {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
     select: data => {
-      return data?.data.results.map((item: any) => {
+      const movies = getTopTenMovies(data?.data.results, 10);
+
+      return movies.map((item: any) => {
         return {
           id: item.id,
           imgUrl: item.poster_path,
