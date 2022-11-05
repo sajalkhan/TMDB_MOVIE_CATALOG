@@ -56,4 +56,11 @@
     object-fit: cover;
     object-position: center;
   }
+
+  .a-text {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

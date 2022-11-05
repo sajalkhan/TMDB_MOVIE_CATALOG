@@ -21,4 +21,5 @@ export const Normal = Template.bind({});
 Normal.args = {
   modifiers: 'medium',
   imgUrl: '/yB8BMtvzHlMmRT1WmTQnGv1bcOK.jpg',
+  movieName: 'Tarzan',
 };

@@ -26,7 +26,7 @@ export const CardList: React.FC<cardListProps> = ({ movies, title, size = 'mediu
           {movies.map((item: cardProps) => {
             return (
               <a href="#" key={item.id}>
-                <Card id={item.id} imgUrl={item.imgUrl} modifiers={size} />
+                <Card id={item.id} movieName={item.movieName} imgUrl={item.imgUrl} modifiers={size} />
               </a>
             );
           })}
