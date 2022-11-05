@@ -1,5 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
 import { Heading } from '.';
 
 export default {
@@ -19,12 +19,12 @@ const Template: ComponentStory<typeof Heading> = args => <Heading {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-  children: 'ボタン',
+  children: 'normal heading',
   tag: 'h3',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   large: true,
-  children: 'ボタン',
+  children: 'large heading',
 };
