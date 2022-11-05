@@ -17,7 +17,9 @@ export const Movies: React.FC<MovieProps> = ({ title, movieId }) => {
 
   return (
     <div className={className}>
-      <Heading tag="h1">{title}</Heading>
+      <Heading tag="h1">
+        <span className="o-movies__title">{title}</span>
+      </Heading>
       <CardList movies={data || []} isLoading={isLoading} />
     </div>
   );
