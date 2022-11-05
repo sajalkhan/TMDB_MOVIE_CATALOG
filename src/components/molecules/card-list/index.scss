@@ -1,13 +1,14 @@
 .m-card-list {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   padding-right: 2rem;
   padding-left: 2rem;
 
   &__items {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     column-gap: 15px;
     padding-top: 1.7rem;
     padding-bottom: 1.5rem;
