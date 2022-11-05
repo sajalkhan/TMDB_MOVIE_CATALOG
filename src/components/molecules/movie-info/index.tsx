@@ -1,4 +1,5 @@
 import { Card } from 'components/atoms/card';
+import { Loading } from 'components/atoms/loading';
 import { mapModifiers } from 'libs/component';
 import React from 'react';
 
@@ -10,6 +11,7 @@ export type MovieInfoProps = {
   popularity: number;
   releaseDate: string;
   imgUrl: string;
+  isLoading?: boolean;
 };
 
 export const MovieInfo: React.FC<MovieInfoProps> = ({
@@ -19,10 +21,15 @@ export const MovieInfo: React.FC<MovieInfoProps> = ({
   imDbId,
   popularity,
   releaseDate,
+  isLoading,
   imgUrl,
 }) => {
   const componentClassName = mapModifiers('m-movie-info');
   const className = `${componentClassName}`.trim();
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className={className}>

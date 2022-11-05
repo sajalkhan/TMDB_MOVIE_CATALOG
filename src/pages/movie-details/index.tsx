@@ -5,21 +5,20 @@ import { useParams } from 'react-router-dom';
 
 const MovieDetails: React.FC = () => {
   const { id } = useParams();
-  const { data, isSuccess } = UseGetMovieDetails(id ?? '');
+  const { data, isLoading } = UseGetMovieDetails(id ?? '');
 
   return (
     <div className="p-movie-details">
-      {isSuccess && (
-        <MovieInfo
-          id={data.id}
-          imgUrl={data.imgUrl}
-          title={data.title}
-          popularity={data.popularity}
-          releaseDate={data.releaseDate}
-          imDbId={data.imDbId}
-          overview={data.overview}
-        />
-      )}
+      <MovieInfo
+        id={data?.id}
+        imgUrl={data?.imgUrl}
+        title={data?.title}
+        popularity={data?.popularity}
+        releaseDate={data?.releaseDate}
+        imDbId={data?.imDbId}
+        overview={data?.overview}
+        isLoading={isLoading}
+      />
     </div>
   );
 };
