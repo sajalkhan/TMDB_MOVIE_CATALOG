@@ -2,6 +2,7 @@ import { Card, cardProps } from 'components/atoms/card';
 import { Heading } from 'components/atoms/heading';
 import { Loading } from 'components/atoms/loading';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface cardListProps {
   size?: 'small' | 'medium' | 'large';
@@ -22,7 +23,11 @@ export const CardList: React.FC<cardListProps> = ({ movies, size = 'medium', isL
       ) : (
         <div className="m-card-list__items">
           {movies.map((item: cardProps) => {
-            return <Card key={item.id} id={item.id} movieName={item.movieName} imgUrl={item.imgUrl} modifiers={size} />;
+            return (
+              <Link to={`/movies/${item.id}`} key={item.id} className="m-card-list__link">
+                <Card id={item.id} movieName={item.movieName} imgUrl={item.imgUrl} modifiers={size} />
+              </Link>
+            );
           })}
         </div>
       )}

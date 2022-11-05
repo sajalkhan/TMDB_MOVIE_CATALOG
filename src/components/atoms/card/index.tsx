@@ -1,14 +1,15 @@
 import DefaultImage from 'assets/images/default_image.png';
 import { Text } from 'components/atoms/text';
+import { IMAGE_BASEURL } from 'constants/index';
 import { mapModifiers, ModifierProp } from 'libs/component';
 import React from 'react';
+
 export interface cardProps {
   modifiers?: ModifierProp<'large' | 'medium' | 'small'>;
   className?: string;
   imgUrl: string;
   movieName: string;
-  id: string | number;
-  onClick?: () => void;
+  id?: string | number;
 }
 
 export const Card: React.FC<cardProps> = ({
@@ -17,15 +18,13 @@ export const Card: React.FC<cardProps> = ({
   imgUrl,
   movieName,
   id,
-  onClick,
 }) => {
   const componentClassName = mapModifiers('a-card', modifiers);
   const className = `${componentClassName} ${additionalClassName}`.trim();
-
-  const imgBaseUrl = 'https://image.tmdb.org/t/p/w342' + imgUrl;
+  const imgBaseUrl = IMAGE_BASEURL + imgUrl;
 
   return (
-    <div className={className} key={id} onClick={onClick}>
+    <div className={className} key={id}>
       <img className="a-card__image" src={imgUrl ? imgBaseUrl : DefaultImage} alt="image" />
       <Text weight="bold">{movieName}</Text>
     </div>
