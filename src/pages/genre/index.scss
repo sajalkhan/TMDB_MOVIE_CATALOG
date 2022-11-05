@@ -5,4 +5,8 @@
   justify-content: center;
   width: 100%;
   text-align: center;
+
+  &__content {
+    padding: 0 10px 0 80px;
+  }
 }
