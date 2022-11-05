@@ -3,6 +3,7 @@ import { Heading } from 'components/atoms/heading';
 import { CardList } from 'components/molecules/card-list';
 import { mapModifiers } from 'libs/component';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export type MovieProps = {
   title: string;
@@ -18,7 +19,9 @@ export const Movies: React.FC<MovieProps> = ({ title, movieId }) => {
   return (
     <div className={className}>
       <Heading tag="h1">
-        <span className="o-movies__title">{title}</span>
+        <Link to={`/genre/${movieId}`} className="o-movies__title">
+          {title}
+        </Link>
       </Heading>
       <CardList movies={data || []} isLoading={isLoading} />
     </div>

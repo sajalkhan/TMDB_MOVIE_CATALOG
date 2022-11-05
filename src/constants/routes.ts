@@ -1,5 +1,5 @@
 export const ROUTES = {
   HOME: '/movies',
-  MOVIES: '/genere/:id',
+  MOVIES: '/genre/:id',
   MOVIES_DETAILS: '/movies/:id',
 } as const;
