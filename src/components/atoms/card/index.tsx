@@ -25,7 +25,7 @@ export const Card: React.FC<cardProps> = ({
 
   return (
     <div className={className} key={id}>
-      <img className="a-card__image" src={imgUrl ? imgBaseUrl : DefaultImage} alt="image" />
+      <img className="a-card__image" src={imgUrl ? imgBaseUrl : DefaultImage} alt="image" draggable={false} />
       <Text weight="bold">{movieName}</Text>
     </div>
   );
