@@ -5,7 +5,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export type navigationProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export const Navigation: React.FC<navigationProps> = ({ children }) => {
