@@ -6,11 +6,12 @@
   width: 100%;
   text-align: center;
 
-  &__content {
-    padding: 0 10px 0 90px;
+  .m-movie-info {
+    margin-bottom: 2rem;
+    transform: translate(-10%, 10%);
 
     @include sp {
-      padding: 0 10px 0 9px;
+      transform: translate(-12%, 10%);
     }
   }
 }

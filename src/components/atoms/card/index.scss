@@ -1,4 +1,6 @@
 .a-card {
+  $root: &;
+
   position: relative;
   width: 25rem;
   max-width: 25rem;
@@ -19,15 +21,21 @@
   }
 
   &--large {
-    position: relative;
     width: 30rem;
-    min-width: 30rem;
+    min-width: 25rem;
     height: 17rem;
-    min-height: 17rem;
+    min-height: 66rem;
+
+    #{$root}__image {
+      max-width: unset;
+    }
+
+    .a-text {
+      text-overflow: unset !important;
+    }
   }
 
   &--medium {
-    position: relative;
     width: 21.8rem;
     min-width: 21.8rem;
     height: 43.4rem;
@@ -35,7 +43,6 @@
   }
 
   &--small {
-    position: relative;
     width: 15.8rem;
     min-width: 15.8rem;
     height: 28rem;

@@ -14,7 +14,7 @@ const App: React.FC = () => {
   return (
     <>
       <Navigation>
-        <Link to={ROUTES.HOME}>home</Link>
+        <Link to={ROUTES.WATCH_LIST}>Watch List</Link>
       </Navigation>
       <Sentry.ErrorBoundary fallback={({ error, resetError }) => <GlobalError error={error} onReset={resetError} />}>
         <PagesRoutes />

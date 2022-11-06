@@ -26,7 +26,7 @@ export const MovieInfo: React.FC<MovieInfoProps> = ({
 
   return (
     <div className={className}>
-      <Card id={id} imgUrl={imgUrl} movieName={title} modifiers="medium" />
+      <Card id={id} imgUrl={imgUrl} movieName={title} modifiers="large" />
       <div className="m-movie-info__details">
         <p className="m-movie-info__popularity">
           <span>Popularity:</span>
