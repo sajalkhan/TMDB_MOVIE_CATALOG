@@ -7,6 +7,8 @@
   height: 22rem;
   max-height: 22rem;
   pointer-events: none;
+  background: radial-gradient($color-white, transparent);
+  border-radius: 15px;
   transition: transform 0.1s ease;
 
   &:hover {
@@ -75,5 +77,10 @@
     pointer-events: fill;
     cursor: pointer;
     transform: translate(-50%, -50%);
+  }
+
+  .a-button {
+    right: 1.5rem;
+    bottom: 3.5rem;
   }
 }

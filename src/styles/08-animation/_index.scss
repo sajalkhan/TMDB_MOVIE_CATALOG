@@ -41,3 +41,25 @@
     transform: translateY(0);
   }
 }
+
+@keyframes heart-beat {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(45deg) scale(1);
+  }
+
+  40% {
+    transform: rotate(45deg) scale(1.2);
+  }
+
+  60% {
+    transform: rotate(45deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}

@@ -1,4 +1,5 @@
 import DefaultImage from 'assets/images/default_image.png';
+import { Button } from 'components/atoms/button';
 import { Text } from 'components/atoms/text';
 import { IMAGE_BASEURL } from 'constants/index';
 import { mapModifiers, ModifierProp } from 'libs/component';
@@ -27,6 +28,7 @@ export const Card: React.FC<cardProps> = ({
     <div className={className} key={id}>
       <img className="a-card__image" src={imgUrl ? imgBaseUrl : DefaultImage} alt="image" draggable={false} />
       <Text weight="bold">{movieName}</Text>
+      <Button />
     </div>
   );
 };

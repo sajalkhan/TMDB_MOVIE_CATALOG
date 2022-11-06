@@ -1,0 +1,95 @@
+/* stylelint-disable selector-class-pattern */
+.a-button {
+  $root: &;
+
+  position: absolute;
+  pointer-events: all;
+  cursor: pointer;
+
+  &__heart {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: $color-white;
+    transform: rotate(45deg);
+    animation: heart-beat 1.2s infinite;
+    backface-visibility: hidden;
+
+    &:before,
+    &:after {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      content: '';
+      background-color: $color-white;
+      border-radius: 50%;
+    }
+
+    &:before {
+      left: -10px;
+    }
+
+    &:after {
+      transform: translate(-10px, -10px);
+    }
+
+    &:hover {
+      animation: none;
+
+      span {
+        position: absolute;
+        top: -25px;
+        left: 25px;
+        display: none;
+        width: max-content;
+        height: 20px;
+        padding: 7px 5px 0;
+        font-size: 12px;
+        font-weight: bold;
+        color: $color-white;
+        text-align: center;
+        content: 'Add to favourite';
+        background: #273c75;
+        border-radius: 5px;
+        outline: 0;
+        transition: display 0.5s ease-in-out;
+        transition-delay: 1s;
+      }
+    }
+  }
+
+  // .fas .fa-heart {
+  //   position: relative;
+  //   color: red;
+  //   cursor: pointer;
+  //   animation: heart-beat 1.5s linear infinite;
+
+  //   &:after {
+  //     position: absolute;
+  //     top: -25px;
+  //     left: 25px;
+  //     display: none;
+  //     width: max-content;
+  //     height: 20px;
+  //     padding: 7px 5px 0;
+  //     font-size: 12px;
+  //     font-weight: bold;
+  //     color: $color-white;
+  //     text-align: center;
+  //     content: 'Remove from favourite';
+  //     background: #273c75;
+  //     border-radius: 5px;
+  //     outline: 0;
+  //     transition: display 0.5s ease-in-out;
+  //     transition-delay: 1s;
+  //   }
+
+  //   &:hover {
+  //     animation: none;
+
+  //     &:after {
+  //       display: block;
+  //     }
+  //   }
+  // }
+}
