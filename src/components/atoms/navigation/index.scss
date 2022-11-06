@@ -22,6 +22,12 @@
       color: transparent;
       background-image: linear-gradient(60deg, #e21143, #ffb03a);
       background-clip: text;
+
+      &:hover {
+        color: transparent;
+        background-image: linear-gradient(60deg, #ac1034, #efcc98);
+        background-clip: text;
+      }
     }
   }
 
@@ -31,7 +37,6 @@
     a {
       font-weight: xd-font-weight('bold');
       color: transparent;
-      text-decoration: none;
       background-image: linear-gradient(60deg, #e21143, #ffb03a);
       background-clip: text;
 
