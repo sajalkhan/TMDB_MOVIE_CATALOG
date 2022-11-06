@@ -26,7 +26,6 @@ export interface SectionProps {
   ref?: React.Ref<HTMLElement>;
 }
 
-// NOTE: react-hook-form requires to wrap component with forwardRef https://react-hook-form.com/get-started#Integratinganexistingform
 export const Section: React.FC<SectionProps> = forwardRef(
   ({ children, modifiers, size, roundedSize, padding, id, className: additionalClassName = '', head }, ref) => {
     const componentClassName = mapModifiers(

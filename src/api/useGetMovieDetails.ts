@@ -3,7 +3,11 @@ import { API_KEY, BASE_URL } from 'constants/index';
 import { useQuery } from 'react-query';
 
 const fetchMovieInfo = (movieId: string | number) => {
-  return axios.get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
+  try {
+    return axios.get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
+  } catch (error) {
+    throw new Error('Exception message from movieDetails api');
+  }
 };
 
 export const UseGetMovieDetails = (movieId: string | number) => {

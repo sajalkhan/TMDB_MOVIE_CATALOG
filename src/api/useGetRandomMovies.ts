@@ -3,7 +3,11 @@ import { API_KEY, BASE_URL } from 'constants/index';
 import { useQuery } from 'react-query';
 
 const fetchMovieInfo = (searchKey: string | number) => {
-  return axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&page=1&with_genres=${searchKey}`);
+  try {
+    return axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&page=1&with_genres=${searchKey}`);
+  } catch (error) {
+    throw new Error('Exception message from random movies api');
+  }
 };
 
 const getRandomFiveMovies = (arr: any, num: number) => {
