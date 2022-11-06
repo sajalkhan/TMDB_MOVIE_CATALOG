@@ -19,7 +19,7 @@ export const Movies: React.FC<MovieProps> = ({ title, movieId }) => {
   return (
     <div className={className}>
       <Heading tag="h1">
-        <Link to={`/genre/${movieId}`} className="o-movies__title">
+        <Link to={`/genre/${movieId}`} state={{ genre: `${title}` }} className="o-movies__title">
           {title}
         </Link>
       </Heading>
