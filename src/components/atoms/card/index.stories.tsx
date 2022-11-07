@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { MemoryRouter } from 'react-router-dom';
 import { Card } from './';
-
 export default {
   title: 'components/atoms/Card',
   component: Card,
@@ -15,7 +15,11 @@ export default {
   },
 } as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = args => <Card {...args} />;
+const Template: ComponentStory<typeof Card> = args => (
+  <MemoryRouter>
+    <Card {...args} />
+  </MemoryRouter>
+);
 
 export const Normal = Template.bind({});
 Normal.args = {

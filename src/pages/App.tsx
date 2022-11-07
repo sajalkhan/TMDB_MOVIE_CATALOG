@@ -2,6 +2,7 @@ import * as Sentry from '@sentry/react';
 import { Loading } from 'components/atoms/loading';
 import { Navigation } from 'components/atoms/navigation';
 import { ROUTES } from 'constants/routes';
+import { useMoviesState } from 'contexts/movies';
 import GlobalError from 'pages/global-error';
 import { PagesRoutes } from 'pages/routes';
 import React from 'react';
@@ -9,12 +10,13 @@ import { useIsMutating } from 'react-query';
 import { Link } from 'react-router-dom';
 
 const App: React.FC = () => {
+  const watchList = useMoviesState();
   const isMutating = useIsMutating();
 
   return (
     <>
       <Navigation>
-        <Link to={ROUTES.WATCH_LIST}>Watch List (0)</Link>
+        <Link to={ROUTES.WATCH_LIST}>Watch List ({watchList.length})</Link>
       </Navigation>
       <Sentry.ErrorBoundary fallback={({ error, resetError }) => <GlobalError error={error} onReset={resetError} />}>
         <PagesRoutes />

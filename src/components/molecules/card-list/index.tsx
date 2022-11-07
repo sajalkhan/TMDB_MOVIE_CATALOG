@@ -1,7 +1,8 @@
 import { Card, cardProps } from 'components/atoms/card';
 import { Loading } from 'components/atoms/loading';
+import { useMoviesDispatch } from 'contexts/movies';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 interface cardListProps {
   size?: 'small' | 'medium' | 'large';
@@ -10,18 +11,33 @@ interface cardListProps {
 }
 
 export const CardList: React.FC<cardListProps> = ({ movies, size = 'medium', isLoading }) => {
-  if (isLoading) {
-    return <Loading />;
-  }
+  const dispatch = useMoviesDispatch();
+  if (isLoading) return <Loading />;
+
+  const handleWatchList = (id: string | number | undefined, imgUrl: string, movieName: string) => {
+    dispatch({
+      type: 'ADD',
+      payload: {
+        id,
+        imgUrl,
+        movieName,
+      },
+    });
+  };
 
   return (
     <div className="m-card-list">
       <div className="m-card-list__items">
         {movies.map((item: cardProps) => {
           return (
-            <Link to={`/movies/${item.id}`} key={item.id} className="m-card-list__link">
-              <Card id={item.id} movieName={item.movieName} imgUrl={item.imgUrl} modifiers={size} />
-            </Link>
+            <Card
+              key={item.id}
+              id={item.id}
+              movieName={item.movieName}
+              imgUrl={item.imgUrl}
+              modifiers={size}
+              onClick={handleWatchList}
+            />
           );
         })}
       </div>
