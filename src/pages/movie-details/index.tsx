@@ -8,9 +8,7 @@ const MovieDetails: React.FC = () => {
   const { id } = useParams();
   const { data, isLoading } = UseGetMovieDetails(id ?? '');
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  if (isLoading) return <Loading />;
 
   return (
     <div className="p-movie-details">
