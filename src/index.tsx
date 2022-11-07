@@ -1,5 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 import * as Sentry from '@sentry/react';
-import React from 'react';
+import { MoviesContextProvider } from 'contexts/movies';
 import ReactDOM from 'react-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -16,9 +17,11 @@ Sentry.init({
 
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
-    <Router>
-      <App />
-    </Router>
+    <MoviesContextProvider>
+      <Router>
+        <App />
+      </Router>
+    </MoviesContextProvider>
     <ReactQueryDevtools />
   </QueryClientProvider>,
   document.getElementById('root')
