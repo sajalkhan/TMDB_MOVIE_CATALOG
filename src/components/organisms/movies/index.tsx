@@ -1,4 +1,4 @@
-import { UseGetRandomMovies } from 'api/useGetRandomMovies';
+import { UseGetMovies } from 'api/useGetMovies';
 import { Heading } from 'components/atoms/heading';
 import { CardList } from 'components/molecules/card-list';
 import { mapModifiers } from 'libs/component';
@@ -11,7 +11,7 @@ export type MovieProps = {
 };
 
 export const Movies: React.FC<MovieProps> = ({ title, movieId }) => {
-  const { data, isLoading } = UseGetRandomMovies(title, movieId);
+  const { data, isLoading } = UseGetMovies(title, movieId);
 
   const componentClassName = mapModifiers('o-movies');
   const className = `${componentClassName}`.trim();
@@ -23,7 +23,7 @@ export const Movies: React.FC<MovieProps> = ({ title, movieId }) => {
           {title}
         </Link>
       </Heading>
-      <CardList movies={data || []} isLoading={isLoading} />
+      <CardList movies={data?.slice(0, 5) || []} isLoading={isLoading} />
     </div>
   );
 };

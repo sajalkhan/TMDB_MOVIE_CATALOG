@@ -10,21 +10,16 @@ const fetchMovieInfo = (searchKey: string | number) => {
   }
 };
 
-const getRandomFiveMovies = (arr: any, num: number) => {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-
-  return shuffled.slice(0, num);
-};
-
-export const UseGetRandomMovies = (params: string, searchKey: string | number) => {
+export const UseGetMovies = (params: string, searchKey: string | number) => {
   return useQuery([params], () => fetchMovieInfo(searchKey), {
     staleTime: 5000,
-    refetchOnMount: false,
     refetchOnWindowFocus: false,
-    select: data => {
-      const movies = getRandomFiveMovies(data?.data.results, 5);
+    refetchOnMount: false,
+    refetchOnReconnect: false,
+    retry: false,
 
-      return movies.map((item: any) => {
+    select: data => {
+      return data?.data.results.map((item: any) => {
         return {
           id: item.id,
           imgUrl: item.poster_path,
