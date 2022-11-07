@@ -1,4 +1,6 @@
 .p-movie-details {
+  $card: '.a-card';
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,5 +16,11 @@
 
   .a-card {
     background: unset;
+  }
+
+  .a-card .a-button {
+    top: 0;
+    right: -8.5rem;
+    bottom: unset;
   }
 }
