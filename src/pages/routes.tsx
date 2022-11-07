@@ -7,6 +7,7 @@ const Home = lazy(() => import('pages/home'));
 const Genre = lazy(() => import('pages/genre'));
 const MovieDetails = lazy(() => import('pages/movie-details'));
 const WatchList = lazy(() => import('pages/watch-list'));
+const NotFound = lazy(() => import('pages/not-found'));
 
 export const PagesRoutes: React.FC = () => (
   <Suspense fallback={<Loading overlay />}>
@@ -16,6 +17,7 @@ export const PagesRoutes: React.FC = () => (
       <Route path={ROUTES.WATCH_LIST} element={<WatchList />} />
       <Route path={ROUTES.MOVIES_DETAILS} element={<MovieDetails />} />
       <Route path="/" element={<Navigate to={ROUTES.HOME} />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>
 );

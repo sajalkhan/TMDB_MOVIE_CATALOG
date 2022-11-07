@@ -1,0 +1,27 @@
+.p-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+
+  &__content {
+    margin-top: 20%;
+
+    @include sp {
+      margin-top: 50%;
+    }
+  }
+
+  .a-heading__text {
+    font-size: 5rem;
+    color: transparent;
+    background-image: linear-gradient(60deg, #ac1034, #efcc98);
+    background-clip: text;
+
+    @include sp {
+      font-size: 3rem;
+    }
+  }
+}
