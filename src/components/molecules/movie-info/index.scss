@@ -26,11 +26,13 @@
 
   .m-section {
     width: 70%;
-    transform: translate(7%, -53%);
+    margin-bottom: 5rem;
+    transform: translate(7%, -35%);
 
     @include sp {
       width: 50%;
-      transform: translate(12%, -53%);
+      margin-bottom: 15rem;
+      transform: translate(12%, -35%);
     }
   }
 }

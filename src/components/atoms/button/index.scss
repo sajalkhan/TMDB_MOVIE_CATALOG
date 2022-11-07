@@ -3,14 +3,13 @@
   $root: &;
 
   position: absolute;
-  pointer-events: all;
   cursor: pointer;
 
   &__heart {
     position: relative;
     width: 20px;
     height: 20px;
-    background-color: $color-white;
+    background-color: $color-primary-red;
     transform: rotate(45deg);
     animation: heart-beat 1.2s infinite;
     backface-visibility: hidden;
@@ -21,7 +20,7 @@
       width: 20px;
       height: 20px;
       content: '';
-      background-color: $color-white;
+      background-color: $color-primary-red;
       border-radius: 50%;
     }
 
