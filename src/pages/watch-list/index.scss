@@ -1,0 +1,23 @@
+.p-watch-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+
+  &__content {
+    padding: 80px 10px 0 90px;
+
+    @include sp {
+      padding: 80px 10px 0 9px;
+    }
+  }
+
+  .a-heading__text {
+    font-size: 2rem;
+    color: transparent;
+    background-image: linear-gradient(60deg, #ac1034, #efcc98);
+    background-clip: text;
+  }
+}
