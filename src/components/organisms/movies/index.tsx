@@ -1,6 +1,4 @@
-import { UseGetMovies } from 'api/useGetMovies';
 import { Heading } from 'components/atoms/heading';
-import { CardList } from 'components/molecules/card-list';
 import { mapModifiers } from 'libs/component';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -8,11 +6,10 @@ import { Link } from 'react-router-dom';
 export type MovieProps = {
   title: string;
   movieId: string | number;
+  children?: React.ReactNode;
 };
 
-export const Movies: React.FC<MovieProps> = ({ title, movieId }) => {
-  const { data, isLoading } = UseGetMovies(title, movieId);
-
+export const Movies: React.FC<MovieProps> = ({ title, movieId, children }) => {
   const componentClassName = mapModifiers('o-movies');
   const className = `${componentClassName}`.trim();
 
@@ -23,7 +20,7 @@ export const Movies: React.FC<MovieProps> = ({ title, movieId }) => {
           {title}
         </Link>
       </Heading>
-      <CardList movies={data?.slice(0, 5) || []} isLoading={isLoading} />
+      <div className="o-movies__items">{children}</div>
     </div>
   );
 };
