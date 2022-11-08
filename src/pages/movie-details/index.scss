@@ -12,6 +12,10 @@
   .m-movie-info {
     margin-bottom: 2rem;
     transform: translate(-7%, 10%);
+
+    @include sp {
+      transform: translate(-9%, 10%);
+    }
   }
 
   .a-card {

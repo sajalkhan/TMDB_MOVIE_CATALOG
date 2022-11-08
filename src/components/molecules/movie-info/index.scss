@@ -14,7 +14,7 @@
     }
 
     p {
-      min-width: 60rem;
+      min-width: 50rem;
       text-align: left;
     }
   }
@@ -27,6 +27,7 @@
   .m-section {
     width: 70%;
     margin-bottom: 5rem;
+    overflow-y: hidden;
     transform: translate(7%, -35%);
 
     @include sp {
