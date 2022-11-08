@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { UseGetGenres } from 'api/useGetGenres';
 import { UseGetMovies } from 'api/useGetMovies';
+import { Loading } from 'components/atoms/loading';
 import { CardList } from 'components/molecules/card-list';
 import { Movies } from 'components/organisms/movies';
+import { useMoviesDispatch } from 'contexts/movies';
 import React from 'react';
 
 type Genres = {
@@ -12,11 +14,25 @@ type Genres = {
 
 const GetMovies = (title: string | any, movieId: string) => {
   const { data, isLoading } = UseGetMovies(title, movieId);
-  return <CardList movies={data?.slice(0, 5) || []} isLoading={isLoading} />;
+  const dispatch = useMoviesDispatch();
+
+  const handleWatchList = (id: string | number | undefined, imgUrl: string, movieName: string) => {
+    dispatch({
+      type: 'ADD',
+      payload: {
+        id,
+        imgUrl,
+        movieName,
+      },
+    });
+  };
+
+  return <CardList movies={data?.slice(0, 5) || []} onClick={handleWatchList} isLoading={isLoading} />;
 };
 
 const Home: React.FC = () => {
-  const { data } = UseGetGenres();
+  const { data, isLoading } = UseGetGenres();
+  if (isLoading) return <Loading />;
 
   return (
     <div className="p-home">

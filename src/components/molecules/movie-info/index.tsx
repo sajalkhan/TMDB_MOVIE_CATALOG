@@ -1,6 +1,6 @@
+import { Button } from 'components/atoms/button';
 import { Card } from 'components/atoms/card';
 import { Section } from 'components/molecules/section';
-import { useMoviesDispatch } from 'contexts/movies';
 import { mapModifiers } from 'libs/component';
 import React from 'react';
 
@@ -12,6 +12,7 @@ export type MovieInfoProps = {
   popularity: number;
   releaseDate: string;
   imgUrl: string;
+  onClick?: (id: string | number | undefined, imgUrl: string, movieName: string) => void;
 };
 
 export const MovieInfo: React.FC<MovieInfoProps> = ({
@@ -22,25 +23,16 @@ export const MovieInfo: React.FC<MovieInfoProps> = ({
   popularity,
   releaseDate,
   imgUrl,
+  onClick,
 }) => {
   const componentClassName = mapModifiers('m-movie-info');
-  const dispatch = useMoviesDispatch();
   const className = `${componentClassName}`.trim();
-
-  const handleWatchList = (id: string | number | undefined, imgUrl: string, movieName: string) => {
-    dispatch({
-      type: 'ADD',
-      payload: {
-        id,
-        imgUrl,
-        movieName,
-      },
-    });
-  };
 
   return (
     <div className={className}>
-      <Card id={id} imgUrl={imgUrl} movieName={title} modifiers="large" onClick={handleWatchList} />
+      <Card id={id} imgUrl={imgUrl} movieName={title} modifiers="large">
+        <Button onClick={() => onClick && onClick(id, imgUrl, title)} />
+      </Card>
 
       <Section modifiers="fill">
         <div className="m-movie-info__details">
