@@ -9,9 +9,10 @@ interface cardListProps {
   movies: cardProps[];
   isLoading?: boolean;
   onClick?: (id: string | number | undefined, imgUrl: string, movieName: string) => void;
+  message?: string;
 }
 
-export const CardList: React.FC<cardListProps> = ({ movies, size = 'medium', isLoading, onClick }) => {
+export const CardList: React.FC<cardListProps> = ({ movies, size = 'medium', isLoading, message, onClick }) => {
   if (isLoading) return <Loading />;
 
   return (
@@ -20,7 +21,7 @@ export const CardList: React.FC<cardListProps> = ({ movies, size = 'medium', isL
         {movies.map((item: cardProps) => {
           return (
             <Card key={item.id} id={item.id} movieName={item.movieName} imgUrl={item.imgUrl} modifiers={size}>
-              <Button onClick={() => onClick && onClick(item.id, item.imgUrl, item.movieName)} />
+              <Button onClick={() => onClick && onClick(item.id, item.imgUrl, item.movieName)} message={message} />
             </Card>
           );
         })}

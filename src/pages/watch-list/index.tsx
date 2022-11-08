@@ -19,7 +19,7 @@ const Genre: React.FC = () => {
     <div className="p-watch-list">
       <div className="p-watch-list__content">
         <Heading>{watchList.length ? 'Favorite Movie List' : 'No Movie Added'}</Heading>
-        <CardList movies={watchList || []} onClick={handleWatchList} />
+        <CardList movies={watchList || []} onClick={handleWatchList} message="Remove From Favorite" />
       </div>
     </div>
   );

@@ -36,60 +36,26 @@
     &:hover {
       animation: none;
 
+      #{$root}__message {
+        display: block;
+      }
+
       span {
         position: absolute;
-        top: -25px;
-        left: 25px;
-        display: none;
+        top: -50px;
+        left: 11px;
         width: max-content;
-        height: 20px;
-        padding: 7px 5px 0;
         font-size: 12px;
         font-weight: bold;
-        color: $color-white;
-        text-align: center;
-        content: 'Add to favourite';
-        background: #273c75;
-        border-radius: 5px;
-        outline: 0;
+        color: $color-primary-purple;
         transition: display 0.5s ease-in-out;
         transition-delay: 1s;
+        transform: rotate(316deg);
       }
     }
   }
 
-  // .fas .fa-heart {
-  //   position: relative;
-  //   color: red;
-  //   cursor: pointer;
-  //   animation: heart-beat 1.5s linear infinite;
-
-  //   &:after {
-  //     position: absolute;
-  //     top: -25px;
-  //     left: 25px;
-  //     display: none;
-  //     width: max-content;
-  //     height: 20px;
-  //     padding: 7px 5px 0;
-  //     font-size: 12px;
-  //     font-weight: bold;
-  //     color: $color-white;
-  //     text-align: center;
-  //     content: 'Remove from favourite';
-  //     background: #273c75;
-  //     border-radius: 5px;
-  //     outline: 0;
-  //     transition: display 0.5s ease-in-out;
-  //     transition-delay: 1s;
-  //   }
-
-  //   &:hover {
-  //     animation: none;
-
-  //     &:after {
-  //       display: block;
-  //     }
-  //   }
-  // }
+  &__message {
+    display: none;
+  }
 }
