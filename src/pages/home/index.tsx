@@ -12,8 +12,8 @@ type Genres = {
   name: string;
 };
 
-const GetMovies = (title: string | any, movieId: string) => {
-  const { data, isLoading } = UseGetMovies(title, movieId);
+const GetMovies = ({ items: { id, name } }: any) => {
+  const { data, isLoading } = UseGetMovies(name, id);
   const dispatch = useMoviesDispatch();
 
   const handleWatchList = (id: string | number | undefined, imgUrl: string, movieName: string) => {
@@ -37,10 +37,10 @@ const Home: React.FC = () => {
   return (
     <div className="p-home">
       <div className="p-home__content">
-        {data?.map((item: Genres) => {
+        {data.map((item: Genres) => {
           return (
             <Movies key={item.id} title={item.name} movieId={item.id}>
-              <GetMovies title={item.name} movieId={item.id} />
+              <GetMovies items={item} />
             </Movies>
           );
         })}
