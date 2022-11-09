@@ -25,7 +25,7 @@ const testFunction = (testName: string, url: string) => {
         waitUntil: 'networkidle2',
       });
       await expect(response.status()).toBe(200);
-      await expect(page.title()).resolves.toMatch('React App');
+      await expect(page.title()).resolves.toMatch('The Movie Db');
     });
 
     it('Contains home page url', async () => {
