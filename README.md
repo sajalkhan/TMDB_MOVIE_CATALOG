@@ -1,5 +1,7 @@
 # The Movie Database
 
+## Live Project Url: https://sohrab-movie-db.netlify.app/movies
+
 ## Tools I Have used
 
 1. TMDB API
