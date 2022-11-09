@@ -1,6 +1,6 @@
 # The Movie Database
 
-## Live Project Url: https://sohrab-movie-db.netlify.app/movies
+## Live Project Url: https://sohrab-movie-db.netlify.app
 
 ## Tools I Have used
 
