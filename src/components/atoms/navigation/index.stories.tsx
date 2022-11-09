@@ -1,5 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Dropdown } from 'components/atoms/dropdown';
 import { MemoryRouter } from 'react-router-dom';
 import { Navigation } from './';
 
@@ -26,8 +27,13 @@ export const Normal = Template.bind({});
 Normal.args = {
   children: [
     <>
-      <a href="#">home</a>
-      <a href="#">SignUp</a>
+      <Dropdown>
+        <a href="https://blog.hubspot.com/">Blog</a>
+        <a href="https://academy.hubspot.com/">Academy</a>
+        <a href="https://www.youtube.com/user/hubspot">YouTube</a>
+        <a href="https://www.youtube.com/user/hubspot">Technology World</a>
+        <a href="https://www.youtube.com/user/hubspot">Technology World bangladesh</a>
+      </Dropdown>
       <a href="#">Profile</a>
     </>,
   ],
