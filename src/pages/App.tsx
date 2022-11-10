@@ -34,7 +34,7 @@ const App: React.FC = () => {
               );
             })}
         </Dropdown>
-        <Link to={ROUTES.WATCH_LIST}>Watch List ({watchList.length})</Link>
+        <Link to={ROUTES.WATCH_LIST}>Favorite ({watchList.length})</Link>
       </Navigation>
       <Sentry.ErrorBoundary fallback={({ error, resetError }) => <GlobalError error={error} onReset={resetError} />}>
         <PagesRoutes />

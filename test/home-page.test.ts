@@ -50,7 +50,7 @@ const testFunction = (testName: string, url: string) => {
         (watchList: string) => document.querySelector(watchList)?.textContent,
         watchList
       );
-      expect(text).not.toEqual('Watch List (0)');
+      expect(text).not.toEqual('Favorite (0)');
       await page.click(watchList);
       expect(page.url()).toContain(Url + 'watchlist');
     });
