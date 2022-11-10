@@ -1,6 +1,6 @@
 # The Movie Database
 
-## Live Project Url: https://sohrab-movie-db.netlify.app
+## Live Project Url: https://tmdb-movie-catalog.vercel.app
 
 ## Tools I Have used
 
