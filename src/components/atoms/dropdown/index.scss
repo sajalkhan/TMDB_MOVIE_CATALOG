@@ -41,6 +41,7 @@
     text-decoration: none;
     background: $color-white;
     border-bottom: 1px solid rgb(142 138 138);
+    transform: translateX(0) !important;
   }
 
   &__content a:hover {

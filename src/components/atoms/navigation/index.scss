@@ -44,7 +44,11 @@
       color: transparent;
       background-image: linear-gradient(60deg, #e21143, #ffb03a);
       background-clip: text;
-      transform: translateX(-20px);
+
+      @include sp {
+        min-width: 95px;
+        transform: translateX(-20px);
+      }
 
       &:hover {
         color: transparent;
